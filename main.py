@@ -21,12 +21,15 @@ while running:
     screen.blit(background, (0, 0))
     screen.blit(game.player.image, game.player.rect)
 
+    game.player.update_health_bar(screen)
+
     # Move the bullets
     for bullet in game.player.all_bullets:
         bullet.move()
 
     for monster in game.all_monsters:
         monster.forward()
+        monster.update_health_bar(screen)
 
     # Display the bullets
     game.player.all_bullets.draw(screen)# Draw the bullet on the background
