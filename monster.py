@@ -9,11 +9,13 @@ class Monster(pygame.sprite.Sprite):
         self.max_health = 100
         self.attack = 0.3
         self.velocity = random.randint(1, 4)
-        self.image = pygame.image.load("assets/monster.png")
+        self.image = pygame.image.load("assets/goofy.png")
         self.image = pygame.transform.scale(self.image, (150, 150))
         self.rect = self.image.get_rect()
         self.rect.x = 1000 + random.randint(0, 300)
         self.rect.y = 575
+        self.origin_image = self.image
+        self.angle = 0
 
     def update_health_bar(self, surface):
         # Draw health bar
